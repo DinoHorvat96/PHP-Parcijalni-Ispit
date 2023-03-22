@@ -8,7 +8,7 @@ class Database {
     private $connection;
     
     private function __construct() {
-        $dsn = 'mysql:host=' . Config::get('DB_HOST') . ';dbname=' . Config::get('DB_NAME');
+        $dsn = 'mysql:host=' . Config::get('DB_HOST') . ';port=' . Config::get('DB_PORT') . ';dbname=' . Config::get('DB_NAME');
         $this->connection = new PDO($dsn, Config::get('DB_USER'), Config::get('DB_PASS'));
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
